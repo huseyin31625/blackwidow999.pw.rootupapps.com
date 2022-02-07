@@ -2,6 +2,7 @@ var brokenBlockslvl1 = 0;
 var brokenBlockslvl2 = 0;
 var lvl = 1;
 var seconds = 60;
+
 function Completed() {
   var element = document.createElement("div");
   element.className = "modal-container";
