@@ -3,4 +3,4 @@ function BreakBlock(el) {
   el.style.opacity = "0";
 }
 var brokenBlocks = 0;
-document.querySelectorAll(".breakable").forEach((el) => {el.addEventListener("mousedown", function(e) {BreakBlock(el); var aud = new Audio("sbbr.mp3"); aud.play();})});
+document.querySelectorAll(".breakable").forEach((el) => {if (brokenBlocks < 5) {el.addEventListener("mousedown", function(e) {BreakBlock(el); var aud = new Audio("sbbr.mp3"); aud.play();})} else {document.getElementById("lvl1").style.display = "none"; document.getElementById("lvl2").style.display = null;} if (brokenBlocks < 15) {el.addEventListener("mousedown", function(e) {BreakBlock(el); var aud = new Audio("sbbr.mp3"); aud.play();})} else {alert("Completed!");}});
