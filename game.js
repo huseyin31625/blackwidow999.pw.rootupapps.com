@@ -3,6 +3,20 @@ var brokenBlockslvl2 = 0;
 var lvl = 1;
 var seconds = 60;
 
+function Won() {
+  var element = document.createElement("div");
+  element.className = "modal-container";
+  var element2 = document.createElement("div");
+  var info = document.createElement("div");
+  info.innerHTML = "<h2>YOU WON!</h2><br><a href=\"prize.exe\">Download Prize</a>";
+  var ok = document.createElement("button");
+  ok.innerHTML = "OK";
+  ok.onclick = function() {element.remove();};
+  element2.appendChild(info);
+  element2.appendChild(ok);
+  element.appendChild(element2);
+  document.body.appendChild(element);
+}
 function Completed() {
   var element = document.createElement("div");
   element.className = "modal-container";
