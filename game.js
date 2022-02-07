@@ -11,4 +11,4 @@ function BreakBlockLv2(el) {
   el.style.opacity = "0";
   brokenBlockslvl2++;
 }
-document.querySelectorAll(".breakable").forEach((el) => {el.addEventListener("click", function(e) {if (lvl == 1) {if (brokenBlockslvl1 != 5) {BreakBlockLv1(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl1 == 5) {lvl++; document.getElementById("lvl1").style.display = "none"; document.getElementById("lvl2").style.display = null;}} if (lvl == 2) {brokenBlockslvl2 = 0;if (brokenBlockslvl2 != 10) {BreakBlockLv2(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl2 == 10) {alert("Completed!");}}});});
+document.querySelectorAll(".breakable").forEach((el) => {el.addEventListener("click", function(e) {if (lvl == 1) {if (brokenBlockslvl1 != 5) {BreakBlockLv1(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl1 == 5) {lvl++; document.getElementById("lvl1").style.display = "none"; document.getElementById("lvl2").style.display = null;} return;} if (lvl == 2) {if (brokenBlockslvl2 != 10) {BreakBlockLv2(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl2 == 10) {alert("Completed!");}}});});
