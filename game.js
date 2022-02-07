@@ -26,7 +26,7 @@ function Completed() {
   info.innerHTML = "Completed!";
   var ok = document.createElement("button");
   ok.innerHTML = "OK";
-  ok.onclick = function() {element.remove();};
+  ok.onclick = function() {element.remove();Won();};
   element2.appendChild(info);
   element2.appendChild(ok);
   element.appendChild(element2);
