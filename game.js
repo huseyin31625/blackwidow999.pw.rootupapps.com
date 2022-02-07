@@ -48,5 +48,5 @@ function display (seconds) {
 
   return [minutes, seconds % 60].map(format).join(':')
 }
-setInterval(function() {if (seconds == 0) {TimesUp(); return;}seconds--; document.getElementById("timer").innerHTML = display(seconds);}, 1000);
+var timer = setInterval(function() {if (seconds == 0) {TimesUp(); clearInterval(timer); return;}seconds--; document.getElementById("timer").innerHTML = display(seconds);}, 1000);
 document.querySelectorAll(".breakable").forEach((el) => {el.addEventListener("click", function(e) {if (lvl == 1) {if (brokenBlockslvl1 != 5) {BreakBlockLv1(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl1 == 5) {lvl++; document.getElementById("lvl1").style.display = "none"; document.getElementById("lvl2").style.display = null;} return;} if (lvl == 2) {if (brokenBlockslvl2 != 10) {BreakBlockLv2(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl2 == 10) {Completed();}}});});
