@@ -15,6 +15,9 @@
   left: 0;
   color: white;
 }
+.itsalmostdone {
+  color: yellow;
+}
 html {
   overflow: hidden;
 }
