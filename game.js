@@ -1,5 +1,6 @@
 var brokenBlockslvl1 = 0;
 var brokenBlockslvl2 = 0;
+var brokenBlockslvl3 = 0;
 var lvl = 1;
 var seconds = 60;
 
@@ -57,6 +58,11 @@ function BreakBlockLv2(el) {
   el.style.opacity = "0";
   brokenBlockslvl2++;
 }
+function BreakBlockLv3(el) {
+  el.style["pointer-events"] = "none";
+  el.style.opacity = "0";
+  brokenBlockslvl3++;
+}
 function display (seconds) {
   const format = val => `0${Math.floor(val)}`.slice(-2)
   const minutes = (seconds % 3600) / 60
@@ -64,4 +70,4 @@ function display (seconds) {
   return [minutes, seconds % 60].map(format).join(':')
 }
 var timer = setInterval(function() {if (seconds == 0) {TimesUp(); clearInterval(timer); return;}seconds--; document.getElementById("timer").innerHTML = display(seconds);}, 1000);
-document.querySelectorAll(".breakable").forEach((el) => {el.addEventListener("click", function(e) {if (lvl == 1) {if (brokenBlockslvl1 != 5) {BreakBlockLv1(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl1 == 5) {lvl++; document.getElementById("lvl1").style.display = "none"; document.getElementById("lvl2").style.display = null;} return;} if (lvl == 2) {if (brokenBlockslvl2 != 10) {BreakBlockLv2(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl2 == 10) {Completed(); clearInterval(timer);}}});});
+document.querySelectorAll(".breakable").forEach((el) => {el.addEventListener("click", function(e) {if (lvl == 1) {if (brokenBlockslvl1 != 5) {BreakBlockLv1(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl1 == 5) {lvl++; document.getElementById("lvl1").style.display = "none"; document.getElementById("lvl2").style.display = null;} return;} if (lvl == 2) {if (brokenBlockslvl2 != 10) {BreakBlockLv2(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl2 == 10) {lvl++; document.getElementById("lvl2").style.display = "none"; document.getElementById("lvl3").style.display = null;}} if (lvl == 2) {if (brokenBlockslvl3 != 15) {BreakBlockLv3(el); var aud = new Audio("sbbr.mp3"); aud.play();} if (brokenBlockslvl3 == 15) {Completed();}}});});
