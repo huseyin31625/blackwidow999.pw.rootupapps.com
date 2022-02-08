@@ -6,6 +6,7 @@
 }
 .breakable {
   width: 20%;
+  image-rendering: pixelated;
 }
 .timer {
   font-size: 60px;
