@@ -9,6 +9,7 @@
 }
 .timer {
   font-size: 60px;
+  font-variation-settings: "wght" 300, "opsz" 36;
   position: fixed;
   top: 0;
   left: 0;
