@@ -12,7 +12,7 @@ function Completed() {
   info.innerHTML = "Completed!";
   var ok = document.createElement("button");
   ok.innerHTML = "OK";
-  ok.onclick = function() {element.remove();};
+  ok.disabled = true;
   element2.appendChild(info);
   element2.appendChild(ok);
   element.appendChild(element2);
@@ -27,8 +27,7 @@ function Exception(txt) {
   info.innerHTML = "<h2>Exception occurred!</h2>" + txt;
   var ok = document.createElement("button");
   ok.innerHTML = "OK";
-  ok.disabled = true;
-  //ok.onclick = function() {element.remove();};
+  ok.onclick = function() {element.remove();};
   element2.appendChild(info);
   element2.appendChild(ok);
   element.appendChild(element2);
